@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BangelsBlends - Kellyville Ridge Barbershop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Black and white hero section background */
+        #home {
+            background-image: url('p1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: grayscale(100%);
+        }
+        /* Mobile-specific background for hero section */
+        @media (max-width: 767px) {
+            #home {
+                background-image: url('chris.png');
+            }
+        }
+        /* Black and white filter for images */
+        .bw-image {
+            filter: grayscale(100%);
+        }
+        /* Gallery video styling */
+        .gallery-video {
+            background-color: #000;
+        }
+        /* Hide extra videos by default */
+        .extra-video {
+            display: none;
+        }
+        .gallery-expanded .extra-video {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-200 bg-black">
+    <!-- Navbar -->
+    <nav class="bg-black text-white fixed w-full top-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="BACK.jpg" alt="BangelsBlends Logo" class="h-10 mr-2 bw-image">
+                <span class="text-2xl font-bold">BangelsBlends</span>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+            <ul id="nav-links" class="hidden md:flex space-x-6">
+                <li><a href="#home" class="hover:text-gray-400">Home</a></li>
+                <li><a href="#services" class="hover:text-gray-400">Services</a></li>
+                <li><a href="#gallery" class="hover:text-gray-400">Gallery</a></li>
+                <li><a href="#about" class="hover:text-gray-400">About</a></li>
+                <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+                <li><a href="#book" class="bg-white text-black px-4 py-2 rounded hover:bg-gray-300">Book Appointment</a></li>
+            </ul>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-700">
+            <ul class="flex flex-col items-center space-y-4 py-4">
+                <li><a href="#home" class="hover:text-gray-400">Home</a></li>
+                <li><a href="#services" class="hover:text-gray-400">Services</a></li>
+                <li><a href="#gallery" class="hover:text-gray-400">Gallery</a></li>
+                <li><a href="#about" class="hover:text-gray-400">About</a></li>
+                <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+                <li><a href="#book" class="bg-white text-black px-4 py-2 rounded hover:bg-gray-300">Book Appointment</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">BangelsBlends</h1>
+            <p class="text-xl md:text-2xl mb-6">Your trusted barbershop in Kellyville Ridge, where style and precision meet in every cut.</p>
+            <a href="#book" class="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-300">Book Appointment</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+            <p class="text-center text-lg mb-8">At BangelsBlends, we offer a wide range of barbering and grooming services for men looking for an impeccable look.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold">Haircut: $40</h3>
+                    <a href="#book" class="text-white hover:underline">Book Appointment</a>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold">Design: $5</h3>
+                    <a href="#book" class="text-white hover:underline">Book Appointment</a>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold">Eyebrows: $5</h3>
+                    <a href="#book" class="text-white hover:underline">Book Appointment</a>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold">Beard: $5</h3>
+                    <a href="#book" class="text-white hover:underline">Book Appointment</a>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-semibold">After Hours: $60</h3>
+                    <a href="#book" class="text-white hover:underline">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Our Gallery</h2>
+            <div id="gallery-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <video class="gallery-video h-64 w-full rounded-lg object-cover" controls>
+                    <source src="v1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover" controls>
+                    <source src="v2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover" controls>
+                    <source src="v3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v5.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v6.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v7.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v8.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v9.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v10.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v11.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v12.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v13.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v14.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v15.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="gallery-video h-64 w-full rounded-lg object-cover extra-video" controls>
+                    <source src="v16.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="text-center mt-8">
+                <button id="toggle-gallery" class="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-300">See More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">About Us</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="fr.png" alt="Christian Bangel" class="h-64 w-full rounded-lg object-cover bw-image mx-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-8">
+                    <h3 class="text-2xl font-semibold mb-4">Christian Bangel</h3>
+                    <p class="text-lg mb-4">Owner & Master Barber</p>
+                    <p class="text-lg">With 5 years of experience, Christian Bangel is dedicated to blending precision, style, and culture for every client. Known for clean fades, sharp lines, and great vibes, he helps clients not only look but feel their best. Walk in for a cut — leave with confidence.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <h3 class="text-2xl font-semibold mb-4">Ready for a Style Change?</h3>
+                <p class="text-lg mb-6">Come to BangelsBlends and discover why we are the preferred choice in Kellyville Ridge.</p>
+                <a href="#book" class="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-300">Book Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+                    <p class="mb-4"><span class="font-semibold">📍 Address:</span> 14 Wollemi Close, Kellyville Ridge</p>
+                    <p class="mb-4"><span class="font-semibold">📞 Phone:</span> +1 (214) 342-0468</p>
+                    <p class="mb-4"><span class="font-semibold">✉️ Email:</span> bangelchristian01@gmail.com</p>
+                    <p class="mb-4"><span class="font-semibold">🌐 Social Media:</span></p>
+                    <ul class="list-disc pl-6">
+                        <li><a href="#" class="text-white hover:underline">@bangelsblends (Instagram)</a></li>
+                        <li><a href="#" class="text-white hover:underline">@bangelsblends (TikTok)</a></li>
+                        <li><a href="#" class="text-white hover:underline">@christianbangel_</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Opening Hours</h3>
+                    <p class="mb-4"><span class="font-semibold">Monday - Friday:</span> 10:00 AM - 9:00 PM</p>
+                    <p class="mb-4"><span class="font-semibold">Saturday:</span> 11:00 AM - 8:30 PM</p>
+                    <p class="mb-4"><span class="font-semibold">Sunday:</span> Closed</p>
+                </div>
+            </div>
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold mb-4 text-center">Our Location</h3>
+                <div class="h-64 rounded-lg bg-gray-800 flex items-center justify-center">
+                    <!-- Replace with Google Maps iframe or placeholder -->
+                    <p class="text-gray-400">Map Placeholder - Insert Google Maps Embed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Appointment Section (Placeholder) -->
+    <section id="book" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-12">Book Appointment</h2>
+            <p class="text-lg mb-6">Booking system coming soon! Please contact us directly to schedule your appointment.</p>
+            <a href="#contact" class="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-300">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 border-t border-gray-700">
+        <div class="container mx-auto px-4 text-center">
+            <img src="BACK.jpg" alt="BangelsBlends Logo" class="h-10 mx-auto mb-4 bw-image">
+            <p class="text-lg mb-4">BangelsBlends - Your trusted barbershop in Kellyville Ridge.</p>
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="#" class="text-white hover:text-gray-400">📸 Instagram</a>
+                <a href="#" class="text-white hover:text-gray-400">🎵 TikTok</a>
+                <a href="#" class="text-white hover:text-gray-400">👤 Personal</a>
+            </div>
+            <p>© 2025 BangelsBlends. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Gallery Toggle -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Gallery Toggle
+        const toggleGalleryButton = document.getElementById('toggle-gallery');
+        const galleryContainer = document.getElementById('gallery-container');
+        toggleGalleryButton.addEventListener('click', () => {
+            galleryContainer.classList.toggle('gallery-expanded');
+            toggleGalleryButton.textContent = galleryContainer.classList.contains('gallery-expanded') ? 'See Less' : 'See More';
+        });
+    </script>
+</body>
+</html>
